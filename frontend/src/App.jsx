@@ -1,9 +1,9 @@
-import "./index.css";
-import "./App.css";
-import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import FetchData from "./components/FetchData";
-import FormData from "./components/FormData";
+import './index.css';
+import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import FetchData from './components/FetchData';
+import FormData from './components/FormData';
 
 const App = () => {
   return (

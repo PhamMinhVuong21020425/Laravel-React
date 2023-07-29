@@ -1,47 +1,46 @@
+import React from 'react';
 const FormData = () => {
   return (
-    <div>
-      <h1>Biểu mẫu đăng ký</h1>
-      <form action="/submit" method="post">
-        <label htmlFor="name">Tên:</label>
-        <input type="text" id="name" name="name" required />
-        <br />
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-        <br />
-        <label htmlFor="password">Mật khẩu:</label>
-        <input type="password" id="password" name="password" required />
-        <br />
-        <label htmlFor="gender">Giới tính:</label>
-        <input type="radio" id="male" name="gender" value="male" /> Nam
-        <input type="radio" id="female" name="gender" value="female" /> Nữ
-        <br />
-        <label htmlFor="country">Quốc gia:</label>
-        <select id="country" name="country">
-          <option value="vn">Việt Nam</option>
-          <option value="us">United States</option>
-          <option value="jp">Japan</option>
-        </select>
-        <br />
-        <fieldset>
-          <legend>Personalia:</legend>
-          <label for="fname">First name:</label>
-          <br />
-          <input type="text" id="fname" name="fname" require />
-          <br />
-          <label for="lname">Last name:</label>
-          <br />
-          <input type="text" id="lname" name="lname" value="Doe" />
-          <br />
-          <br />
-          <button type="submit" value="Submit">Submit Form</button>
-        </fieldset>
-        <label htmlFor="message">Thông điệp:</label>
-        <textarea id="message" name="message" rows="4" cols="50"></textarea>
-        <br />
-        <button type="submit">Gửi</button>
-        <button type="reset">Xóa</button>
-      </form>
+    <div className="flex items-center justify-center h-screen">
+      <div className="w-full max-w-sm">
+        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+              Username
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="username"
+              type="text"
+              placeholder="Username"
+            />
+          </div>
+          <div className="mb-6">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+              Password
+            </label>
+            <input
+              className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              id="password"
+              type="password"
+              placeholder="******************"
+            />
+            <p className="text-red-500 text-xs italic">Please choose a password.</p>
+          </div>
+          <div className="flex items-center justify-between">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="button"
+            >
+              Sign In
+            </button>
+            <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+              Forgot Password?
+            </a>
+          </div>
+        </form>
+        <p className="text-center text-gray-500 text-xs">&copy; 2023 Acme Corp. All rights reserved.</p>
+      </div>
     </div>
   );
 };
