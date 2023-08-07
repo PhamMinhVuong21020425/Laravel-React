@@ -5,13 +5,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [
-    'eslint:recommended',
-    'react-app',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-  ],
+  extends: ['eslint:recommended', 'react-app', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended'],
   overrides: [
     {
       env: {
@@ -47,7 +41,7 @@ module.exports = {
         singleQuote: true,
         trailingComma: 'es5',
         endOfLine: 'lf',
-        tabWidth: 2,
+        tabWidth: 4,
         useTabs: false,
         printWidth: 120,
       },

@@ -17,11 +17,21 @@ class Cors
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request)
-            ->header('Access-Control-Allow-Origin', 'http://localhost:3000')
-            ->header('Access-Control-Allow-Credentials', 'true')
-            ->header('Access-Control-Allow-Methods', '*')
-            ->header('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With, Authorization, x-csrf-token, x-xsrf-token');
+        $headers = [
+            'Cache-Control' => 'nocache, no-store, max-age=0, must-revalidate',
+            'Pragma' => 'no-cache',
+            'Expires' => 'Sun, 02 Jan 1990 00:00:00 GMT',
+            'Access-Control-Allow-Origin' => '*',
+            'Access-Control-Allow-Headers' => 'Content-Type, X-Requested-With, Authorization, x-csrf-token, x-xsrf-token',
+            'Access-Control-Allow-Credentials' => 'true',
+            'Access-Control-Allow-Methods' => '*'
+        ];
+        $response = $next($request);
+        foreach ($headers as $key => $value) {
+            $response->headers->set($key, $value);
+        }
+
+        return $response;
     }
 
 }
