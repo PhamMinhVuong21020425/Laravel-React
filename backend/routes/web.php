@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PhotoController;
@@ -56,4 +57,18 @@ Route::group(['middleware' => []], function () {
         // $name = 'favicon.ico';
         // return response()->download($pathToFile, $name);
     });
+
+    Route::post('/upload', function (Request $request) {
+        $token = csrf_token();
+        if ($request->hasFile('upload')) {
+            $file = $request->file('upload');
+            $fileName = time() . $file->getClientOriginalName();
+            $storedPath = $file->storeAs('uploads', $fileName);
+            // Xử lý file tải lên
+            return response()->json(['message' => $storedPath]);
+        }
+        return response()->json(['error' => 'bad request']);
+    });
 });
+
+Route::fallback(fn() => view('welcome'));

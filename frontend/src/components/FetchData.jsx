@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import request from '../util/request';
 
 const FetchData = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios
-            .get('http://127.0.0.1:8000/example', {
-                withCredentials: true,
-            })
+        request
+            .get('example')
             .then(response => {
                 setData(response.data);
                 // console.log(response);

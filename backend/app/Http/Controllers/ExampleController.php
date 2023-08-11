@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class ExampleController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         return response()->json([
             'message' => 'Fetch Data From Laravel API',

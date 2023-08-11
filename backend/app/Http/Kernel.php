@@ -24,9 +24,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\Cors::class,
     ];
 
-    protected $routeMiddleware = [
-        \App\Http\Middleware\Cors::class,
-    ];
+    protected $routeMiddleware = [];
 
     /**
      * The application's route middleware groups.
