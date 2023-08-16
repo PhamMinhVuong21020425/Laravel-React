@@ -55,9 +55,12 @@ const FormUpload = () => {
                         />
                     </svg>
                     <p className='mb-2 text-sm text-red-500 dark:text-gray-400'>
-                        <span className='font-semibold'>Click to upload</span> or drag and drop
+                        <span className='font-semibold'>Click to upload</span>{' '}
+                        or drag and drop
                     </p>
-                    <p className='text-sm text-gray-500 dark:text-gray-400'>SVG, PNG, JPG, PDF or GIF</p>
+                    <p className='text-sm text-gray-500 dark:text-gray-400'>
+                        SVG, PNG, JPG, PDF or GIF
+                    </p>
                 </div>
                 <input
                     id='dropzone-file'
@@ -73,7 +76,9 @@ const FormUpload = () => {
                 >
                     Submit
                 </button>
-                {res && <div className='text-green-600 text-sm'>File is upload</div>}
+                {res && (
+                    <div className='text-green-600 text-sm'>File is upload</div>
+                )}
             </label>
         </div>
     );

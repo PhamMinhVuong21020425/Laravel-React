@@ -36,3 +36,23 @@
         transform: rotate(360deg);
     }
 }
+
+.dark {
+    background-color: aquamarine;
+    font-weight: 200;
+}
+
+body {
+    margin: 3%;
+}
+
+button {
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: none;
+    cursor: pointer;
+    background-color: orange;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: small;
+}

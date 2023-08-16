@@ -5,7 +5,10 @@ const FormData = () => {
             <div className='w-full max-w-sm'>
                 <form className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
                     <div className='mb-4'>
-                        <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='username'>
+                        <label
+                            className='block text-gray-700 text-sm font-bold mb-2'
+                            htmlFor='username'
+                        >
                             Username
                         </label>
                         <input
@@ -16,7 +19,10 @@ const FormData = () => {
                         />
                     </div>
                     <div className='mb-6'>
-                        <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='password'>
+                        <label
+                            className='block text-gray-700 text-sm font-bold mb-2'
+                            htmlFor='password'
+                        >
                             Password
                         </label>
                         <input
@@ -25,7 +31,9 @@ const FormData = () => {
                             type='password'
                             placeholder='******************'
                         />
-                        <p className='text-red-500 text-xs italic'>Please choose a password.</p>
+                        <p className='text-red-500 text-xs italic'>
+                            Please choose a password.
+                        </p>
                     </div>
                     <div className='flex items-center justify-between'>
                         <button
@@ -42,7 +50,9 @@ const FormData = () => {
                         </a>
                     </div>
                 </form>
-                <p className='text-center text-gray-500 text-xs'>&copy; 2023 Acme Corp. All rights reserved.</p>
+                <p className='text-center text-gray-500 text-xs'>
+                    &copy; 2023 Acme Corp. All rights reserved.
+                </p>
             </div>
         </div>
     );
