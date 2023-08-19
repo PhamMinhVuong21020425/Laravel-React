@@ -4,11 +4,28 @@ import './index.css';
 import './App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import {
+    legacy_createStore as createStore,
+    applyMiddleware,
+    compose,
+} from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './store/reducers/rootReducer';
+
+const enhancer = compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+const store = createStore(rootReducer, enhancer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App />
+        <Provider store={store}>
+            <App />
+        </Provider>
     </React.StrictMode>
 );
 

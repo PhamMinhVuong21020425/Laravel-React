@@ -1,3 +1,9 @@
+@import 'antd/dist/reset.css';
+
+.ant-select-multiple .ant-select-selection-item {
+    height: 27px;
+}
+
 .App {
     text-align: center;
 }
